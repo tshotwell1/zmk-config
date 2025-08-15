@@ -1,4 +1,12 @@
 [
+  {
+    "name": "Arcturis",
+    "author": "Ty Shotwell",
+    "switchMount": "cherry",
+    "switchBrand": "gateron",
+    "switchType": "KS-3-Tea",
+    "pcb": true
+  },
   [
     {
       "x": 1,
