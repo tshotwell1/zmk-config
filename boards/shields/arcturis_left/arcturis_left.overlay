@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "arcturis.dtsi"
+#include "../arcturis/arcturis.dtsi"
 /{
     chosen {
         zmk,kscan = &default_kscan;
