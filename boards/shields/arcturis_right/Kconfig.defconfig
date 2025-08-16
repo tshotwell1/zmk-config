@@ -1,11 +1,11 @@
 if SHIELD_ARCTURIS
 
-config ZMK_KEYBOARD_NAME
-    default "Arcturis"
+    config ZMK_KEYBOARD_NAME
+        default "Arcturis"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default n
-
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default n
+endif
 if SHIELD_ARCTURIS_LEFT || SHIELD_ARCTURIS_RIGHT
 
 config ZMK_SPLIT
