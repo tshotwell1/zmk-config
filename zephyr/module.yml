@@ -1,5 +1,4 @@
 name: zmk-config
 type: module
 build:
-  cmake: "."
   kconfig: "Kconfig"
