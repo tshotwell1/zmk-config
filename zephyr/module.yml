@@ -1,4 +1,5 @@
 name: zmk-config
 build:
-  cmake: .
+  cmake:
+    path: "."
   kconfig: Kconfig
