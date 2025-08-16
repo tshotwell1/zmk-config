@@ -1,14 +1,13 @@
 if SHIELD_ARCTURIS
+    config ZMK_KEYBOARD_NAME
+        default "Arcturis"
 
-config ZMK_KEYBOARD_NAME
-    default "Arcturis"
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+endif
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
+// Enable split mode if either left or right shield is selected
 if SHIELD_ARCTURIS_LEFT || SHIELD_ARCTURIS_RIGHT
-
-config ZMK_SPLIT
-    default y
-
+    config ZMK_SPLIT
+        default y
 endif
