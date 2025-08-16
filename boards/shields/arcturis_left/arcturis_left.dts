@@ -1,0 +1,7 @@
+#include "../arcturis/arcturis.dtsi"
+
+/ {
+    chosen {
+        zmk,keyboard = &arcturis_left;
+    };
+};
