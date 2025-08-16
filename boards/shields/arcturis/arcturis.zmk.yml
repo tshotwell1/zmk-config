@@ -1,0 +1,11 @@
+file_format: "1"
+id: arcturis
+name: Arcturis
+type: shield
+url: https://github.com/tshotwell1/zmk-config
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - arcturis_left
+  - arcturis_right

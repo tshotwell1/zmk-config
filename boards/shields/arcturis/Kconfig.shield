@@ -1,0 +1,4 @@
+config SHIELD_ARCTURIS_LEFT
+    def_bool $(shields_list_contains,arcturis_left)
+config SHIELD_ARCTURIS_RIGHT
+    def_bool $(shields_list_contains,arcturis_right)
