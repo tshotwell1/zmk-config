@@ -15,6 +15,12 @@
             RC(4,0) RC(4,1) RC(4,2)
         >;
     };
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "default_kscan";
+        diode-direction = "row2col";
+
+    };
 
     chosen {
         //zmk,kscan = &kscan0;
