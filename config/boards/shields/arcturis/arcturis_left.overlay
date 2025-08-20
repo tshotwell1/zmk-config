@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "../arcturis/arcturis.dtsi"
+#include "arcturis.dtsi"
 
 &k0 {
     row-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,

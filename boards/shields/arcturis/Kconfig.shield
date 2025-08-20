@@ -1,4 +1,0 @@
-config SHIELD_ARCTURIS
-    def_bool true
-    help
-      Root shield for Arcturis keyboard (shared configs)
