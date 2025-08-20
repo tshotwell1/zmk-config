@@ -20,7 +20,7 @@
         zmk,matrix-transform = &d0;
     };
 
-    default_transform {
+    d0 {
         col-offset = <5>;
     };
 };
