@@ -11,7 +11,7 @@
                 &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K    &kp L    &kp ;
                 &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp ,    &kp .    &kp /
                 &kp F1   &kp F2   &kp F3   &kp 1    &kp 2    &kp LEFT &kp UP   &kp RIGHT  &kp ' &kp -
-                                           &kp F4   &kp F5   &studio_unlock
+                                           &kp F4   &kp F5   &kp F
             >;
         };
     };
