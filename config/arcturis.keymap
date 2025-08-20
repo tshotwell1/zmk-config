@@ -14,5 +14,5 @@
                                            &kp F4   &kp F5   &studio_unlock
             >;
         };
-    }
+    };
  };
