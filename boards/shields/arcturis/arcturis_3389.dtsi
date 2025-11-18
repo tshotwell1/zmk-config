@@ -50,7 +50,7 @@
     /* CS = P1.15 (active low) */
     cs-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
 
-    pmw3389: pmw3389@0 {
+    trackball: pmw3389@0 {
         compatible = "pixart,pmw3389";
         reg = <0>;
         spi-max-frequency = <2000000>;
