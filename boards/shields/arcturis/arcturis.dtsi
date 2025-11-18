@@ -19,7 +19,7 @@
                             RC(4,2) RC(4,3) RC(4,4)
         >;
     };
-}
+};
     &kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
