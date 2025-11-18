@@ -1,4 +1,0 @@
-mainmenu "ZMK Config"
-
-# Include all shields
-rsource "boards/shields/*/Kconfig.shield"

@@ -1,0 +1,16 @@
+if SHIELD_ARCTURIS_DONGLE
+
+config ZMK_KEYBOARD_NAME
+	default "Arcturis"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_ARCTURIS_DONGLE || SHIELD_ARCTURIS_LEFT || SHIELD_ARCTURIS_RIGHT
+
+config ZMK_SPLIT
+	default y
+	
+endif

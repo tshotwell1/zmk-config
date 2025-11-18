@@ -1,0 +1,66 @@
+/ {
+    /* Input event codes (these can stay as-is) */
+    #define INPUT_EV_KEY 0x01
+    #define INPUT_EV_REL 0x02
+    #define INPUT_EV_ABS 0x03
+    #define INPUT_EV_MSC 0x04
+    #define INPUT_EV_VENDOR_START 0xf0
+    #define INPUT_EV_VENDOR_STOP 0xff
+
+    #define INPUT_REL_X 0x00
+    #define INPUT_REL_Y 0x01
+    #define INPUT_REL_WHEEL 0x08
+    #define INPUT_REL_HWHEEL 0x06
+    #define INPUT_REL_MISC 0x09
+};
+
+/* -------------------------
+ * SPI PIN CONTROL (SPIM0)
+ * ------------------------- */
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 2)>,   /* SCK = P0.02  */
+                    <NRF_PSEL(SPIM_MOSI, 0, 29)>, /* MOSI = P0.29 */
+                    <NRF_PSEL(SPIM_MISO, 0, 31)>; /* MISO = P0.31 */
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 2)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 29)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 31)>;
+            low-power-enable;
+        };
+    };
+};
+
+/* -------------------------
+ * PMW3389 SENSOR NODE
+ * ------------------------- */
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    /* CS = P1.15 (active low) */
+    cs-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
+
+    pmw3389: pmw3389@0 {
+        compatible = "pixart,pmw3389";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        resolution = <800>;                   /* CPI setting */
+
+        irq-gpios  = <&gpio1 11 GPIO_ACTIVE_LOW>; /* MOTION pin (MT = P1.11) */
+        rst-gpios  = <&gpio0 10 GPIO_ACTIVE_LOW>; /* Reset pin  (RST = P0.10) */
+
+        evt-type     = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+    };
+};
