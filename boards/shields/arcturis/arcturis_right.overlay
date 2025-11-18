@@ -36,3 +36,13 @@
 &trackball_split {
 	device = <&trackball>;
 };
+/ {
+    zmk,studio {
+        compatible = "zmk,studio-info";
+
+        physical-layout {
+            rows = <4>;
+            columns = <5>;
+        };
+    };
+};

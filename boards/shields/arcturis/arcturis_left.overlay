@@ -24,3 +24,13 @@
 &trackball_split {
 	status = "disabled";
 };
+/ {
+    zmk,studio {
+        compatible = "zmk,studio-info";
+
+        physical-layout {
+            rows = <5>;
+            columns = <5>;
+        };
+    };
+};

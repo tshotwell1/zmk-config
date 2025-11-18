@@ -1,0 +1,14 @@
+studio:
+  keyboard:
+    name: "Arcturis"
+    split: true
+    sides:
+      - left
+      - right
+    physical_layout:
+      left:
+        rows: 5
+        columns: 5
+      right:
+        rows: 4
+        columns: 5
