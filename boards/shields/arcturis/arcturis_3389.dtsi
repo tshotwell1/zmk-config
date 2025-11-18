@@ -57,7 +57,7 @@
         resolution = <800>;                   /* CPI setting */
 
         //irq-gpios  = <&gpio1 11 GPIO_ACTIVE_LOW>; /* MOTION pin (MT = P1.11) */
-        rst-gpios  = <&gpio0 10 GPIO_ACTIVE_LOW>; /* Reset pin  (RST = P0.10) */
+        //rst-gpios  = <&gpio0 10 GPIO_ACTIVE_LOW>; /* Reset pin  (RST = P0.10) */
 
         evt-type     = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
