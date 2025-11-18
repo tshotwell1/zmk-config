@@ -3,7 +3,12 @@
 
 / {
     chosen {
+        zmk,kscan = &kscan0;
         zmk,physical-layout = &arcturis_default_layout;
+    };
+
+    &kscan0 {
+        diode-direction = "row2col";
     };
 
     default_transform: keymap_transform_0 {
@@ -18,10 +23,6 @@
             RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)   RC(3,9) RC(3,8) RC(3,7) RC(3,6) RC(3,5)
                             RC(4,2) RC(4,3) RC(4,4)
         >;
-    };
-
-    &kscan0 {
-        diode-direction = "row2col";
     };
 
     split_inputs {
