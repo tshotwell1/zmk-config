@@ -26,15 +26,6 @@
     &kscan0 {
         diode-direction = "row2col";
     };
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@2 {
-            compatible = "zmk,input-split";
-            reg = <2>;
-        };
-    };
 
     arcturis_default_layout: arcturis_default_layout {
         compatible = "zmk,physical-layout";

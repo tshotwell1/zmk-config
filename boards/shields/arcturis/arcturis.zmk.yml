@@ -8,6 +8,5 @@ features:
   - keys
   - pointer
 siblings:
-  - arcturis_dongle
   - arcturis_left
   - arcturis_right

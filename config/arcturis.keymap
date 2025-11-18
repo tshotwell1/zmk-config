@@ -10,21 +10,6 @@
 #define Base 0
 
 / {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball_split>;
-
-        snipe {
-            layers = <Mouse>;
-            input-processors = <&zip_xy_scaler 1 3>;
-        };
-
-        scroll {
-            layers = <Nav>;
-            input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
-    };
-
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
