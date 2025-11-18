@@ -4,7 +4,6 @@
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
 	wakeup-source;
-	
 	col-gpios
 		= <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -32,5 +31,13 @@
             rows = <5>;
             columns = <5>;
         };
+    };
+};
+
+split_inputs {
+    left: left_split@0 {
+        compatible = "zmk,input-split";
+        reg = <0>;
+        kscan = <&kscan0>;
     };
 };

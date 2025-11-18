@@ -6,9 +6,8 @@
 	col-offset = <5>;
 };
 
-&kscan0 {
+&kscan1 {
 	compatible = "zmk,kscan-gpio-matrix";
-	
 	col-gpios
 		= <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -36,13 +35,11 @@
 &trackball_split {
 	device = <&trackball>;
 };
-/ {
-    zmk,studio {
-        compatible = "zmk,studio-info";
 
-        physical-layout {
-            rows = <4>;
-            columns = <5>;
-        };
+split_inputs {
+    right: right_split@1 {
+        compatible = "zmk,input-split";
+        reg = <1>;
+        kscan = <&kscan1>;
     };
 };
