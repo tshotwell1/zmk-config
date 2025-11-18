@@ -20,6 +20,7 @@
         >;
     };
 };
+/ {
     &kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
@@ -39,6 +40,7 @@
             , <&pro_micro 10 GPIO_ACTIVE_HIGH>
             ;
     };
+};
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
