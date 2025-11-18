@@ -23,18 +23,8 @@
 &trackball_split {
 	status = "disabled";
 };
-/ {
-    zmk,studio {
-        compatible = "zmk,studio-info";
 
-        physical-layout {
-            rows = <5>;
-            columns = <5>;
-        };
-    };
-};
-
-split_inputs {
+&split_inputs {
     left: left_split@0 {
         compatible = "zmk,input-split";
         reg = <0>;

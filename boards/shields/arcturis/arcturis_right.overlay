@@ -36,7 +36,7 @@
 	device = <&trackball>;
 };
 
-split_inputs {
+&split_inputs {
     right: right_split@1 {
         compatible = "zmk,input-split";
         reg = <1>;
