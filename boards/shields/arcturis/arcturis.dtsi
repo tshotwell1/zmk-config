@@ -1,9 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
-&kscan0 {
-    diode-direction = "row2col";
-};
+
 
 / {
     chosen {
@@ -25,6 +23,9 @@
         >;
     };
 
+    &kscan0 {
+        diode-direction = "row2col";
+    };
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
