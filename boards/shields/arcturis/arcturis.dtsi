@@ -26,9 +26,6 @@
         zmk,physical-layout = &arcturis_default_layout;
         zmk,uart = <&uart0>;
     };
-    zephyr_udc0: &usbd {
-        status = "okay";
-    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
