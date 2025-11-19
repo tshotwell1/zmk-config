@@ -6,6 +6,7 @@ url: https://github.com/tshotwell1/Arcturis-ZMK
 requires: [nice_nano_v2]
 features:
   - keys
+  - studio
 siblings:
   - arcturis_left
   - arcturis_right
