@@ -3,7 +3,7 @@ id: arcturis
 name: Arcturis
 type: shield
 url: https://github.com/tshotwell1/Arcturis-ZMK
-requires: [pro_micro]
+requires: [nice_nano_v2]
 features:
   - keys
 siblings:
