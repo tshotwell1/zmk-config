@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "arcturis-layouts.dtsi"
+#include <physical_layouts.dtsi>
 / {
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
@@ -24,7 +25,6 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &arcturis_default_layout;
-        zmk,uart = <&uart0>;
     };
 
     default_transform: keymap_transform_0 {
