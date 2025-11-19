@@ -1,7 +1,2 @@
 #include "arcturis.dtsi"
 #include "arcturis_3389.dtsi"
-/ {
-    chosen {
-        zmk,usb-log = &usb_logging;
-    };
-};
