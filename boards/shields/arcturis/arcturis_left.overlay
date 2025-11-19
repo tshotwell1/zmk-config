@@ -1,21 +1,2 @@
 #include "arcturis.dtsi"
 #include "arcturis_3389.dtsi"
-
-&kscan0{
-    compatible = "zmk,kscan-gpio-matrix";
-    wakeup-source;
-    col-gpios
-        = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        ;
-
-    row-gpios
-        = <&gpio0 11 GPIO_ACTIVE_HIGH>
-        , <&gpio1 4 GPIO_ACTIVE_HIGH>
-        , <&gpio1 6 GPIO_ACTIVE_HIGH>
-        , <&gpio0 9 GPIO_ACTIVE_HIGH>
-        ;
-};

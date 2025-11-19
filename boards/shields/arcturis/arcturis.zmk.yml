@@ -6,7 +6,6 @@ url: https://github.com/tshotwell1/Arcturis-ZMK
 requires: [pro_micro]
 features:
   - keys
-  - pointer
 siblings:
   - arcturis_left
   - arcturis_right
