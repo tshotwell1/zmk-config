@@ -16,7 +16,12 @@
                             RC(4,2) RC(4,3) RC(4,4)
         >;
     };
-
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "row2col";
+        wakeup-source;
+        diode-direction = "row2col";
+    };
     arcturis_default_layout: arcturis_default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Arcturis-Default";
