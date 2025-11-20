@@ -7,8 +7,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-#define Base 0
-
 / {
     behaviors {
         hm: homerow_mods {
@@ -49,6 +47,26 @@
         &kp F1  &kp F2  &kp F3  &mkp LCLK  &mkp RCLK         &kp LEFT  &kp UP  &kp RIGHT  &kp SQT     &kp MINUS
                         &kp F4  &kp F5     &studio_unlock
             >;
+        };
+
+        extra_layer_1{
+            status = "reserved";
+        };
+
+        extra_layer_2{
+            status = "reserved";
+        };
+
+        extra_layer_3{
+            status = "reserved";
+        };
+
+        extra_layer_4{
+            status = "reserved";
+        };
+
+        extra_layer_5{
+            status = "reserved";
         };
 
     };

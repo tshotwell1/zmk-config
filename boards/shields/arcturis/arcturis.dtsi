@@ -21,11 +21,6 @@
             ;
     };
 
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &arcturis_default_layout;
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
@@ -43,7 +38,6 @@
     arcturis_default_layout: arcturis_default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Arcturis-Default";
-
         transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
@@ -109,5 +103,10 @@
                 ;
         };
 
+    };
+
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &arcturis_default_layout;
     };
 };
