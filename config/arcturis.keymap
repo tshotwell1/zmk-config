@@ -36,7 +36,7 @@
 &hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp M     &hm RIGHT_ALT N  &hm RIGHT_WIN E  &hm RCTRL I  &hm RIGHT_SHIFT O
 &kp Z             &kp X        &kp C           &kp D           &kp V            &kp K     &kp H            &kp COMMA        &kp PERIOD   &kp SLASH
 &kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT  &kp UP           &kp RIGHT        &kp SQT      &kp MINUS
-                               &to 0           &to 1           &to 2
+                               &kp F4          &lt 3 F5        &lt 2 F6
             >;
         };
 
@@ -46,7 +46,7 @@
 &hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp KP_DIVIDE    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS
 &kp Z             &kp X        &kp C           &kp D           &kp V            &kp K            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
 &kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT         &kp UP           &kp RIGHT        &kp KP_NUMBER_0  &kp PERIOD
-                               &to 0           &to 1           &to 2
+                               &lt 0 F4        &lt 3 F5        &lt 2 F6
             >;
         };
 
@@ -56,7 +56,17 @@
 &hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp AT           &kp EQUAL      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
 &kp Z             &kp X        &kp C           &kp D           &kp V            &kp PERCENT      &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH
 &kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT         &kp UP         &kp RIGHT             &kp SQT                &kp MINUS
-                               &to 0           &to 1           &to 2
+                               &lt 0 F4        &lt 3 F5        &lt 2 F6
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&hm ESCAPE Q      &kp W        &kp F           &kp P           &kp B            &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS
+&hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp KP_DIVIDE    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS
+&kp Z             &kp X        &kp C           &kp D           &kp V            &kp K            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
+&kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT         &kp UP           &kp RIGHT        &kp KP_NUMBER_0  &kp PERIOD
+                               &lt 0 F4        &lt 3 F5        &lt 2 F6
             >;
         };
     };
