@@ -35,8 +35,8 @@
 &kp Q             &kp W        &kp F           &kp P           &kp B            &kp J     &kp L            &kp U            &kp Y        &kp SEMICOLON
 &hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp M     &hm RIGHT_ALT N  &hm RIGHT_WIN E  &hm RCTRL I  &hm RIGHT_SHIFT O
 &kp Z             &kp X        &kp C           &kp D           &kp V            &kp K     &kp H            &kp COMMA        &kp PERIOD   &kp SLASH
-&kp F1            &kp F2       &kp F3          &kp ENTER       &kp BACKSPACE    &kp LEFT  &kp UP           &kp RIGHT        &kp SQT      &kp MINUS
-                               &kp F4          &kp F5          &kp F6
+&kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT  &kp UP           &kp RIGHT        &kp SQT      &kp MINUS
+                               &tog 0          &tog 1          &tog 2
             >;
         };
 
@@ -45,18 +45,18 @@
 &kp Q             &kp W        &kp F           &kp P           &kp B            &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS
 &hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp KP_DIVIDE    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS
 &kp Z             &kp X        &kp C           &kp D           &kp V            &kp K            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
-&kp F1            &kp F2       &kp F3          &kp ENTER       &kp BACKSPACE    &kp LEFT         &kp UP           &kp RIGHT        &kp KP_NUMBER_0  &kp PERIOD
-                               &kp F4          &kp F5          &kp F6
+&kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT         &kp UP           &kp RIGHT        &kp KP_NUMBER_0  &kp PERIOD
+                               &tog 0          &tog 1          &tog 2
             >;
         };
 
-        layer_2 {
+        prog_layer {
             bindings = <
-&kp Q             &kp W        &kp F           &kp P           &kp B            &kp J     &kp L           &kp UP_ARROW    &kp Y            &kp SEMICOLON
-&hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp M     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &hm RIGHT_SHIFT O
-&kp Z             &kp X        &kp C           &kp D           &kp V            &kp K     &kp H           &kp COMMA       &kp PERIOD       &kp SLASH
-&kp F1            &kp F2       &kp F3          &kp ENTER       &kp BACKSPACE    &kp LEFT  &kp UP          &kp RIGHT       &kp SQT          &kp MINUS
-                               &kp F4          &kp F5          &kp F6
+&kp Q             &kp W        &kp F           &kp P           &kp B            &kp EXCLAMATION  &kp POUND      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp AT           &kp EQUAL      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
+&kp Z             &kp X        &kp C           &kp D           &kp V            &kp PERCENT      &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH
+&kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &kp LEFT         &kp UP         &kp RIGHT             &kp SQT                &kp MINUS
+                               &tog 0          &tog 1          &tog 2
             >;
         };
     };
