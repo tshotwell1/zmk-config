@@ -1,23 +1,16 @@
 if SHIELD_ARCTURIS_LEFT
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
 config ZMK_KEYBOARD_NAME
     default "Arcturis"
 
-endif
-
-if SHIELD_ARCTURIS_RIGHT
-
 config ZMK_SPLIT_ROLE_CENTRAL
-    default n
+    default y
 
 endif
 
 if SHIELD_ARCTURIS_LEFT || SHIELD_ARCTURIS_RIGHT
 
 config ZMK_SPLIT
-	default y
-	
+    default y
+
 endif

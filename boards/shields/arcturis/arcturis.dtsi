@@ -1,13 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
-
-
-
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &arcturis_default_layout;
-    };
+    
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -22,16 +16,17 @@
                             RC(4,2) RC(4,3) RC(4,4)
         >;
     };
-
     kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "row2col";
+        wakeup-source;
         diode-direction = "row2col";
     };
-
     arcturis_default_layout: arcturis_default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Arcturis-Default";
-
         transform = <&default_transform>;
+        kscan = <&kscan0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   50       0     0     0>
@@ -79,8 +74,7 @@
             , <&key_physical_attrs 100 100  550  400       0     0     0>
             ;
     };
-
-
+    
     arcturis_position_map {
         compatible = "zmk,physical-layout-position-map";
 
@@ -99,4 +93,8 @@
 
     };
 
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &arcturis_default_layout;
+    };
 };
