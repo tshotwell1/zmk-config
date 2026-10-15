@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: tshotwell1
+      url-base: https://github.com/tshotwell1
+  self:
+    path: config
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-  self:
-    path: config
+    - name: zmk-driver-pmw3360
+      remote: tshotwell1
+      revision: v0.3

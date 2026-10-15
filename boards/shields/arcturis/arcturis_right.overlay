@@ -5,7 +5,7 @@
 &default_transform {
 	col-offset = <5>;
 };
-
+&trackball_split { device = <&trackball>; };
 &kscan0 {
         col-gpios
         = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
