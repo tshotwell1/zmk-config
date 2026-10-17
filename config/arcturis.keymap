@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
     behaviors {
@@ -26,6 +27,16 @@
     };
 
 
+    input_processors {
+        scroll_div: scroll_div {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>, <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -34,7 +45,7 @@
 &hm ESCAPE Q      &kp W        &kp E           &kp R           &kp T            &kp Y     &kp U            &kp I            &kp O        &kp P
 &hm LEFT_SHIFT A  &hm LCTRL S  &hm LEFT_WIN D  &hm LEFT_ALT F  &kp G            &kp H     &hm RIGHT_ALT J  &hm RIGHT_WIN K  &hm RCTRL L  &hm RIGHT_SHIFT SEMICOLON
 &kp Z             &kp X        &kp C           &kp V           &kp B            &kp N     &kp M            &kp COMMA        &kp PERIOD   &kp SLASH
-&kp F1            &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &lt 1 F7  &lt 4 F8         &lt 3 F9         &kp SQT      &kp MINUS
+&lt 5 F1          &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &lt 1 F7  &lt 4 F8         &lt 3 F9         &kp SQT      &kp MINUS
                                &lt 4 F4        &lt 2 F5        &lt 1 F6
             >;
         };
@@ -69,14 +80,57 @@
             >;
         };
 
+        /* Holding F4 or F8 makes the trackball scroll - see the listener
+         * override at the bottom of this file.
+         * &bootloader is source-specific: the bottom-left key puts the LEFT
+         * half into bootloader, the bottom-right key the RIGHT half. */
         media_layer {
             bindings = <
-&trans  &trans  &trans          &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp C_PREVIOUS  &kp C_PP           &kp C_NEXT              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans             &trans                  &trans  &trans  &trans  &trans  &trans
-                &trans          &trans             &studio_unlock
+&trans       &trans  &trans          &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &trans  &trans  &trans  &trans  &trans
+&trans       &trans  &kp C_PREVIOUS  &kp C_PP           &kp C_NEXT              &trans  &trans  &trans  &trans  &trans
+&trans       &trans  &trans          &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &trans  &trans  &trans  &trans  &trans
+&bootloader  &trans  &trans          &trans             &trans                  &trans  &trans  &trans  &trans  &bootloader
+                     &trans          &trans             &studio_unlock
             >;
         };
+
+        /* Scrolling with the opposite vertical direction, held via F1. Scroll
+         * direction is a coin flip until you try it, so both are wired up in
+         * this one build: hold F4 for one direction, F1 for the other. Once
+         * you know which you want, delete the one you don't and drop F1 back
+         * to &kp F1. Every key here is transparent, so typing is unaffected. */
+        scroll_alt_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans
+            >;
+        };
+    };
+};
+
+/* Turn the trackball into a scroll ball on layer 4 (hold F4 or F8), and on
+ * layer 5 (hold F1) with the vertical direction flipped.
+ *
+ * Order matters: the mapper turns X/Y into horizontal/vertical wheel events,
+ * then scroll_div divides them down. The ball is 800 CPI, about 315 counts per
+ * cm, so a divisor of 48 gives roughly 6 scroll ticks per cm of ball travel.
+ * Lower the divisor to scroll faster, raise it to scroll slower.
+ *
+ * The transform runs before the mapper because it acts on X/Y, not on wheel
+ * codes. It only applies on this layer, so pointer direction is untouched. */
+&trackball_listener {
+    scroller {
+        layers = <4>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&scroll_div 1 48>;
+    };
+
+    scroller_inverted {
+        layers = <5>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+                           <&zip_xy_to_scroll_mapper>,
+                           <&scroll_div 1 48>;
     };
 };
