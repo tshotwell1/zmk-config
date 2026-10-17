@@ -59,8 +59,7 @@
     reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;                   /* RST = P0.10 */
     cpi = <800>;
 
-    /* The sensor is mounted at an angle in the socket. If the cursor comes
-     * out mirrored rather than corrected, use 315 instead. */
-    rotation = <45>;
+    /* The sensor is mounted 90 degrees out in the socket. */
+    rotation = <0>;
   };
 };
