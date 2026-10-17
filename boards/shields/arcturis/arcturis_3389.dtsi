@@ -59,7 +59,12 @@
     reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;                   /* RST = P0.10 */
     cpi = <800>;
 
-    /* The sensor is mounted 90 degrees out in the socket. */
-    rotation = <0>;
+    /* The sensor is rotated 45 degrees in the socket, and its view of the ball
+     * is mirrored, so a rotation alone cannot correct it. Measured at
+     * rotation=0 with no inverts: ball board-up gave cursor top-right, and
+     * ball board-right gave cursor top-left.
+     * Equivalent alternative: rotation = <135> with invert-y instead. */
+    rotation = <315>;
+    invert-x;
   };
 };
