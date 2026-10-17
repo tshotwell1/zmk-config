@@ -58,5 +58,9 @@
     irq-gpios   = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  /* MT  = P1.11 */
     reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;                   /* RST = P0.10 */
     cpi = <800>;
+
+    /* The sensor is mounted at an angle in the socket. If the cursor comes
+     * out mirrored rather than corrected, use 315 instead. */
+    rotation = <45>;
   };
 };
