@@ -44,9 +44,9 @@
 
         base_layer {
             bindings = <
-&hm ESCAPE Q      &kp W        &kp E           &kp R           &kp T            &kp Y     &kp U            &kp I            &kp O        &kp P
-&hm LEFT_SHIFT A  &hm LCTRL S  &hm LEFT_WIN D  &hm LEFT_ALT F  &kp G            &kp H     &hm RIGHT_ALT J  &hm RIGHT_WIN K  &hm RCTRL L  &hm RIGHT_SHIFT SEMICOLON
-&kp Z             &kp X        &kp C           &kp V           &kp B            &kp N     &lt 1 M          &kp COMMA        &kp PERIOD   &kp SLASH
+&hm ESCAPE Q      &kp W        &kp F           &kp P           &kp B            &kp J     &kp L            &kp U            &kp Y        &kp SEMI
+&hm LEFT_SHIFT A  &hm LCTRL R  &hm LEFT_WIN S  &hm LEFT_ALT T  &kp G            &kp M     &hm RIGHT_ALT N  &hm RIGHT_WIN E  &hm RCTRL I  &hm RIGHT_SHIFT O
+&kp Z             &kp X        &kp C           &kp D           &kp V            &kp K     &lt 1 H          &kp COMMA        &kp PERIOD   &kp SLASH
 &lt 5 F1          &kp F2       &kp ENTER       &kp SPACE       &kp BACKSPACE    &lt 1 F7  &lt 4 F8         &lt 3 F9         &kp SQT      &kp MINUS
                                &lt 4 F4        &lt 2 F5        &lt 1 F6
             >;
